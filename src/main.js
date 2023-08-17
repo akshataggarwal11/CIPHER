@@ -3,11 +3,6 @@ import { vigenereEncrypt, vigenereDecrypt } from "./scripts/vigenere.js";
 import { playfairEncrypt, playfairDecrypt } from "./scripts/playfair.js";
 import { railFenceEncrypt, railFenceDecrypt } from "./scripts/railfence.js";
 import {
-  transpositionEncrypt,
-  transpositionDecrypt,
-} from "./scripts/transposition.js";
-import { affineEncrypt, affineDecrypt } from "./scripts/affine.js";
-import {
   multiplicativeEncrypt,
   multiplicativeDecrypt,
 } from "./scripts/multiplicative.js";
@@ -80,49 +75,6 @@ document.getElementById("railFenceDecryptBtn").addEventListener("click", () => {
   document.getElementById("railFenceOutput").value = decryptedText;
 });
 
-// Event handler for the Transposition Cipher buttons
-document
-  .getElementById("transpositionEncryptBtn")
-  .addEventListener("click", () => {
-    const text = document
-      .getElementById("transpositionText")
-      .value.toUpperCase();
-    const keyword = document
-      .getElementById("transpositionKeyword")
-      .value.toUpperCase();
-    const encryptedText = transpositionEncrypt(text, keyword);
-    document.getElementById("transpositionOutput").value = encryptedText;
-  });
-
-document
-  .getElementById("transpositionDecryptBtn")
-  .addEventListener("click", () => {
-    const text = document
-      .getElementById("transpositionText")
-      .value.toUpperCase();
-    const keyword = document
-      .getElementById("transpositionKeyword")
-      .value.toUpperCase();
-    const decryptedText = transpositionDecrypt(text, keyword);
-    document.getElementById("transpositionOutput").value = decryptedText;
-  });
-
-// Event handler for the Affine Cipher buttons
-document.getElementById("affineEncryptBtn").addEventListener("click", () => {
-  const text = document.getElementById("affineText").value.toUpperCase();
-  const key1 = parseInt(document.getElementById("affineA").value);
-  const key2 = parseInt(document.getElementById("affineB").value);
-  const encryptedText = affineEncrypt(text, key1, key2);
-  document.getElementById("affineOutput").value = encryptedText;
-});
-
-document.getElementById("affineDecryptBtn").addEventListener("click", () => {
-  const text = document.getElementById("affineText").value.toUpperCase();
-  const key1 = parseInt(document.getElementById("affineA").value);
-  const key2 = parseInt(document.getElementById("affineB").value);
-  const decryptedText = affineDecrypt(text, key1, key2);
-  document.getElementById("affineOutput").value = decryptedText;
-});
 
 // Event handler for the Multiplicative Cipher buttons
 document
